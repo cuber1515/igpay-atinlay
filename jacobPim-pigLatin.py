@@ -24,11 +24,19 @@ for line in lines:
     print(line.split(" "))
     wordLine.append(line.split(" "))
 
+for line in range (len(wordLine)):
+    for word in range(len(wordLine[line])):
+        firstLetter = thing[0]
+        thing = thing[1:] + firstLetter + "ay"
+        print(thing)
+
+"""
 for line in wordLine:
     for thing in line:
         firstLetter = thing[0]
         thing = thing[1:] + firstLetter + "ay"
         print(thing)
+"""
 
 print(wordLine)
         
