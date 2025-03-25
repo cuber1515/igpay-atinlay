@@ -10,32 +10,41 @@ poem.close()
 
 # splitting lines
 lines = text.split("\n")
-realLines = lines
 
 wordLine = []
 wordSum = 0
 
+""""
 # remove empty lines
 for line in lines:
     if len(line) == 0:
         lines.remove(line)
+"""
+
 
 # split into words
 for line in lines:
-    print(line.split(" "))
-    wordLine.append(line.split(" "))
+    if len(line) != 0:
+        print(line.split(" "))
+        wordLine.append(line.split(" "))
+    else:
+        wordLine.append(line)
 
 # pigify the words
 for line in range (len(wordLine)):
-    for word in range(len(wordLine[line])):
-        thing = wordLine[line][word]
-        firstLetter = thing[0]
-        wordLine[line][word] = thing[1:] + firstLetter + "ay"
+    if len(wordLine[line]) != 0:
+        for word in range(len(wordLine[line])):
+            thing = wordLine[line][word]
+            firstLetter = thing[0]
+            wordLine[line][word] = thing[1:] + firstLetter + "ay"
 
 # scrap attempt
 for line in wordLine:
-    currentLine = " ".join(line)
-    print(currentLine)
+    if len(line) != 0:
+        currentLine = " ".join(line)
+        print(currentLine)
+    else:
+        print(line)
 
 # print(wordLine)
         
