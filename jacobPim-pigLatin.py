@@ -1,20 +1,21 @@
 # Jacob Pim
 # Pig Latin
 
+
 vowels = ["a", "e", "i", "o", "u"]
 
-# Step 1) Open files
+# Open files
 poem = open("Jabberwocky.txt", "r")
 text = poem.read()
 poem.close()
 
-# splitting lines
+# Splitting lines
 lines = text.split("\n")
 
+# List of words
 wordLine = []
-wordSum = 0
 
-# split into words
+# Adding the words to the list
 for line in lines:
     if len(line) != 0:
         print(line.split(" "))
@@ -22,7 +23,7 @@ for line in lines:
     else:
         wordLine.append(line)
 
-# pigify the words
+# Pigify the words
 for line in range (len(wordLine)):
     if len(wordLine[line]) != 0:
         for word in range(len(wordLine[line])):
@@ -30,9 +31,10 @@ for line in range (len(wordLine)):
             firstLetter = thing[0]
             wordLine[line][word] = thing[1:] + firstLetter + "ay"
 
+# Open new file
 pigLatin = open("Abberwockyjay.txt", "w")
 
-# scrap attempt
+# Print pig latin poem to new file
 for line in wordLine:
     if len(line) != 0:
         currentLine = " ".join(line)
