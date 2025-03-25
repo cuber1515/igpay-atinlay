@@ -14,14 +14,6 @@ lines = text.split("\n")
 wordLine = []
 wordSum = 0
 
-""""
-# remove empty lines
-for line in lines:
-    if len(line) == 0:
-        lines.remove(line)
-"""
-
-
 # split into words
 for line in lines:
     if len(line) != 0:
@@ -38,30 +30,15 @@ for line in range (len(wordLine)):
             firstLetter = thing[0]
             wordLine[line][word] = thing[1:] + firstLetter + "ay"
 
+pigLatin = open("Abberwockyjay.txt", "w")
+
 # scrap attempt
 for line in wordLine:
     if len(line) != 0:
         currentLine = " ".join(line)
         print(currentLine)
+        pigLatin.write(f"{currentLine} \n")
+
     else:
         print(line)
-
-# print(wordLine)
-        
-
-# Step 4) Creating Pig Latin lines
-
-    # Step 4a) Instantiating each Pig Latin line
-    
-    # Step 4b) Turning each word into Pig Latin
-
-    # Step 4c) Appending each Pig Latin line
-
-
-# Step 5) Writing the file
-
-# Step 5a) Opening the new file
-
-# Step 5b) Writing and formatting
-
-# Step 5c) Closing the file
+        pigLatin.write("\n")
