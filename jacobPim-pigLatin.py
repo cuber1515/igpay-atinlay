@@ -18,7 +18,7 @@ wordLine = []
 # Adding the words to the list
 for line in lines:
     if len(line) != 0:
-        print(line.split(" "))
+        # print(line.split(" "))
         wordLine.append(line.split(" "))
     else:
         wordLine.append(line)
@@ -28,8 +28,11 @@ for line in range (len(wordLine)):
     if len(wordLine[line]) != 0:
         for word in range(len(wordLine[line])):
             thing = wordLine[line][word]
-            firstLetter = thing[0]
-            wordLine[line][word] = thing[1:] + firstLetter + "ay"
+
+            firstVowel = 1
+            
+            firstLetters = thing[0:1]
+            wordLine[line][word] = thing[1:] + firstLetters + "ay"
 
 # Open new file
 pigLatin = open("Abberwockyjay.txt", "w")
@@ -38,9 +41,11 @@ pigLatin = open("Abberwockyjay.txt", "w")
 for line in wordLine:
     if len(line) != 0:
         currentLine = " ".join(line)
-        print(currentLine)
+        # print(currentLine)
         pigLatin.write(f"{currentLine} \n")
 
     else:
-        print(line)
+        # print(line)
         pigLatin.write("\n")
+
+pigLatin.close()
